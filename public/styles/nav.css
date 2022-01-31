@@ -1,0 +1,30 @@
+nav {
+  height: 120px;
+  display: block;
+  background-color: #4056a1;
+  color: #ffffff;
+  padding: 0em 1.5em;
+  line-height: 120px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+nav span {
+  font-family: "Bungee", sans-serif;
+}
+
+nav div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+nav div p {
+  margin-top: 0;
+  height: 55px;
+}
+
+.fas {
+  color: red;
+}
