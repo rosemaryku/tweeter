@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -27,6 +27,8 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -41,12 +43,46 @@
       <span>tweeter</span>
       <div>
         <p><b>Write</b> a new tweet</p>
-        <!-- TODO: PUT ARROW ON SEPERATE LINE -->
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
 
+    <header>
+      <div>
+        <img src="/images/profile-hex.png" />
+      </div>
+      <br />
+      <div>
+        <!-- RK TODO - AMY SHOULD BE BOLDED  -->
+        <h2>Amy Mansell</h2>
+      </div>
+    </header>
+
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+
+      <!-- RK DUMMY TEXT BELOW  -->
+      <h1>First Post</h1>
+      <p>
+        This <b>content </b>will be the main content Lorem, ipsum dolor sit amet
+        consectetur adipisicing elit. Laborum corporis eos qui rem cum suscipit
+        facere est sapiente. Esse necessitatibus quia provident id saepe.
+        Commodi cum corrupti atque fugiat voluptatum? Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Harum culpa illo minus iusto, tenetur
+        veniam ullam a corporis eum aut vitae soluta nisi eos repellat dolorem.
+        Quibusdam voluptatum temporibus quod.
+      </p>
+    </main>
   </body>
 </html>

@@ -1,5 +1,6 @@
 nav {
   height: 120px;
+  width: 100%;
   display: block;
   background-color: #4056a1;
   color: #ffffff;
@@ -8,12 +9,12 @@ nav {
   display: flex;
   justify-content: space-between;
   text-align: center;
+  position: fixed;
 }
 
 nav span {
   font-family: "Bungee", sans-serif;
 }
-
 nav div {
   display: flex;
   flex-direction: column;
@@ -22,7 +23,7 @@ nav div {
 
 nav div p {
   margin-top: 0;
-  height: 55px;
+  height: 80px;
 }
 
 .fas {

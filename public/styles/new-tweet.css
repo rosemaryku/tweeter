@@ -1,0 +1,40 @@
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+textarea {
+  border: none;
+  border-bottom: solid #545149 5px;
+  display: block;
+  width: 100%;
+  background-color: #f4f1ec;
+  resize: none;
+  outline: none;
+  line-height: 0.8;
+  margin-top: 20px;
+}
+
+main label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+}
+
+main div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+main button {
+  font-family: "Bungee", sans-serif;
+  background-color: #4056a1;
+  color: #fff;
+  padding: 5px;
+}
+
+.counter {
+  font-family: "Bungee", sans-serif;
+}
