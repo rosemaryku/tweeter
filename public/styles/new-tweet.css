@@ -38,3 +38,7 @@ main button {
 .counter {
   font-family: "Bungee", sans-serif;
 }
+
+.counter.red {
+  color: red;
+}
