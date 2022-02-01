@@ -1,29 +1,29 @@
 nav {
   height: 120px;
   width: 100%;
-  display: block;
   background-color: #4056a1;
   color: #ffffff;
-  padding: 0em 1.5em;
-  line-height: 120px;
+  padding: 0 1.5em;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   text-align: center;
-  position: fixed;
+  position: sticky;
+  top: 0;
 }
 
 nav span {
   font-family: "Bungee", sans-serif;
 }
+
 nav div {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 nav div p {
-  margin-top: 0;
-  height: 80px;
+  margin: 0;
 }
 
 nav .fas {

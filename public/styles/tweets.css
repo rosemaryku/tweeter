@@ -1,11 +1,6 @@
 article.tweet {
-  background-color: #f4f1ec;
-  height: 200px;
   border: solid #545149 3px;
   margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
   padding: 0 25px;
 }
 

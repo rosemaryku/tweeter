@@ -1,8 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 header.profile {
   height: 400px;
   width: 100%;
@@ -12,20 +7,10 @@ header.profile {
   align-items: center;
   background-color: #ffc55c;
   background-image: url("https://www.transparenttextures.com/patterns/wild-flowers.png");
-  padding-top: 140px;
-}
-
-header img {
-  width: 180px;
-  margin-bottom: 0;
-  justify-content: center;
-  align-content: center;
-}
-
-header div {
-  width: 200px;
-}
-
-h2 {
+  padding-top: 50px;
   color: white;
+}
+
+header.profile h2 {
+  margin: 0;
 }

@@ -2,7 +2,7 @@ $(document).ready(function () {
   $("textarea").on("input", function () {
     $(this)
       .parent()
-      .find("output")
+      .find(".counter")
       .text(140 - this.value.length)
       .toggleClass("red", 140 - this.value.length < 0);
   });
