@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -51,7 +52,7 @@
       </div>
     </nav>
 
-    <header>
+    <header class="profile">
       <div>
         <img src="/images/profile-hex.png" />
       </div>
@@ -76,17 +77,22 @@
         </form>
       </section>
 
-      <!-- RK DUMMY TEXT BELOW  -->
-      <h1>First Post</h1>
-      <p>
-        This <b>content </b>will be the main content Lorem, ipsum dolor sit amet
-        consectetur adipisicing elit. Laborum corporis eos qui rem cum suscipit
-        facere est sapiente. Esse necessitatibus quia provident id saepe.
-        Commodi cum corrupti atque fugiat voluptatum? Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Harum culpa illo minus iusto, tenetur
-        veniam ullam a corporis eum aut vitae soluta nisi eos repellat dolorem.
-        Quibusdam voluptatum temporibus quod.
-      </p>
+      <!-- RK TWEETS SECTIONS WITH DUMMY DATA  -->
+      <article class="tweet">
+        <header>
+          <div><img src="https://i.imgur.com/73hZDYK.png" /> Newton</div>
+          <span>@SirIsaac</span>
+        </header>
+        If I have seen further it is by standing on the shoulder of giants
+        <footer>
+          10 days ago
+          <span>
+            <i class="fas fa-flag"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-heart"></i>
+          </span>
+        </footer>
+      </article>
     </main>
   </body>
 </html>
