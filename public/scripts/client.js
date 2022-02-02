@@ -30,49 +30,36 @@ const data = [
   },
 ];
 
-const renderTweets = function (tweets) {
-  // console.log(tweets);
-  const article = $(`<article class='tweet'></article>`);
-  $.each(tweets, (tweet) => {
-    article.append(
-      $(
-        `<header> <div> <img src="` +
-          tweets[tweet].user.avatars +
-          `"/>` +
-          tweets[tweet].user.name +
-          `</div><span>` +
-          tweets[tweet].user.handle +
-          `</span></header>` +
-          tweets[tweet].content.text +
-          `<footer> 10 days ago <span>
-            <i class="fas fa-flag"></i>
-            <i class="fas fa-retweet"></i>
-            <i class="fas fa-heart"></i>
-          </span>
-        </footer>`
-      )
-    );
-  });
-
+const renderTweets = function (data) {
   $(document).ready(function () {
-    $(".container").html(article);
+    $.each(data, function (tweet) {
+      let indPost = createTweetElement(data[tweet]);
+      $(".container").append(indPost);
+    });
   });
-
-  // articles.append(section);
-
-  // const tweetElements = $('<article class="tweet"></article>');
-
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
 };
 
-// const createTweetElement = function (tweet) {
-//   // let $tweet =
-
-//   /* Your code for creating the tweet element */
-
-//   return $tweet;
-// };
+const createTweetElement = function (tweet) {
+  let $tweet = $(`<article class='tweet'></article>`);
+  $tweet.append(
+    $(
+      `<header> <div> <img src="` +
+        tweet.user.avatars +
+        `"/>` +
+        tweet.user.name +
+        `</div><span>` +
+        tweet.user.handle +
+        `</span></header>` +
+        tweet.content.text +
+        `<footer> 10 days ago <span>
+          <i class="fas fa-flag"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="fas fa-heart"></i>
+        </span>
+      </footer>`
+    )
+  );
+  return $tweet;
+};
 
 renderTweets(data);
