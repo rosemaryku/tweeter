@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/error.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -80,6 +81,16 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+
+        <div id="errorOne">
+          Yikes, your tweet has no content. Please tweet away.
+          <i class="fas fa-exclamation-circle"></i>
+        </div>
+
+        <div id="errorTwo">
+          Yikes, your tweet is too long. Please limit to 140 characters
+          <i class="fas fa-exclamation-circle"></i>
+        </div>
       </section>
       <section class="tweets-container"></section>
     </main>

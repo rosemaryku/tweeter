@@ -4,6 +4,12 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const renderTweets = function (data) {
   $.each(data, function (tweet) {
     let indPost = createTweetElement(data[tweet]);
@@ -16,9 +22,9 @@ const createTweetElement = function (tweet) {
     `<article class='tweet'>
       <header> <div> <img src="${tweet.user.avatars}"/>${
       tweet.user.name
-    }</div><span> ${tweet.user.handle}</span></header> ${
+    }</div><span> ${tweet.user.handle}</span></header> ${escape(
       tweet.content.text
-    }<footer>${timeago.format(tweet.created_at)}<span>
+    )}<footer>${timeago.format(tweet.created_at)}<span>
           <i class="fas fa-flag"></i>
           <i class="fas fa-retweet"></i>
           <i class="fas fa-heart"></i>
@@ -30,15 +36,16 @@ const createTweetElement = function (tweet) {
 
 $(document).ready(function () {
   $("form").on("submit", function (event) {
-    if ($("textarea").val().length === 0) {
-      alert("Error your tweet post is empty");
+    $("#errorOne").slideUp("slow", () => {});
+    $("#errorTwo").slideUp("slow", () => {});
+
+    if (!$("textarea").val().length) {
+      $("#errorOne").slideDown("slow", () => {});
       return event.preventDefault();
     }
 
     if ($("textarea").val().length > 140) {
-      alert(
-        "Your tweet exceeds that maximum character length of 140. Please try tweeting again. "
-      );
+      $("#errorTwo").slideDown("slow", () => {});
       return event.preventDefault();
     }
 
