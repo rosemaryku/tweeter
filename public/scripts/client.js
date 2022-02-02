@@ -31,35 +31,41 @@ const data = [
 ];
 
 const renderTweets = function (data) {
-  $(document).ready(function () {
-    $.each(data, function (tweet) {
-      let indPost = createTweetElement(data[tweet]);
-      $(".container").append(indPost);
-    });
+  $.each(data, function (tweet) {
+    let indPost = createTweetElement(data[tweet]);
+    $(".container").append(indPost);
   });
 };
 
 const createTweetElement = function (tweet) {
-  let $tweet = $(`<article class='tweet'></article>`);
-  $tweet.append(
-    $(
-      `<header> <div> <img src="` +
-        tweet.user.avatars +
-        `"/>` +
-        tweet.user.name +
-        `</div><span>` +
-        tweet.user.handle +
-        `</span></header>` +
-        tweet.content.text +
-        `<footer> 10 days ago <span>
+  let $tweet = $(
+    `<article class='tweet'>
+      <header> <div> <img src="${tweet.user.avatars}"/>${
+      tweet.user.name
+    }</div><span> ${tweet.user.handle}</span></header> ${
+      tweet.content.text
+    }<footer>${timeago.format(tweet.created_at)}<span>
           <i class="fas fa-flag"></i>
           <i class="fas fa-retweet"></i>
           <i class="fas fa-heart"></i>
         </span>
-      </footer>`
-    )
+      </footer></article>`
   );
   return $tweet;
 };
 
-renderTweets(data);
+$(document).ready(function () {
+  renderTweets(data);
+
+  $("form").on("submit", function (event) {
+    event.preventDefault();
+    // console.log($(this).serialize());
+    $.ajax({ url: "/tweets", method: "POST", data: $(this).serialize() });
+  });
+
+  function loadTweets() {
+    $.ajax("/tweets", { method: "GET" }).then(console.log("Got it"));
+  }
+
+  loadTweets();
+});
