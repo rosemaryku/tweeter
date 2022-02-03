@@ -49,4 +49,5 @@ footer .fas {
 
 footer .fas:hover {
   color: #c79e52;
+  cursor: pointer;
 }

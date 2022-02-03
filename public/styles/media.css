@@ -1,0 +1,21 @@
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+  }
+
+  .container .profile {
+    width: 40%;
+    margin: 5%;
+  }
+
+  .container main {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  nav {
+    background-color: #4056a1;
+    background-image: none;
+  }
+}

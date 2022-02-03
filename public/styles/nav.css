@@ -41,7 +41,6 @@ nav button p {
 nav .fas {
   color: red;
   height: 30px;
-
   animation-duration: 2s;
   animation-iteration-count: infinite;
   transform-origin: top;
@@ -57,12 +56,5 @@ nav .fas {
   }
   100% {
     transform: translateY(0);
-  }
-}
-
-@media (min-width: 1024px) {
-  nav {
-    background-color: #4056a1;
-    background-image: none;
   }
 }

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("textarea").on("input", function () {
+  $("#tweet-text").on("input", function () {
     $(this)
       .parent()
       .find(".counter")

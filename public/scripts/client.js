@@ -1,15 +1,11 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
+// Escape function to limit XSS
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
+// Render all tweets
 const renderTweets = function (data) {
   $.each(data, function (tweet) {
     let indPost = createTweetElement(data[tweet]);
@@ -17,6 +13,7 @@ const renderTweets = function (data) {
   });
 };
 
+// Render ind tweet
 const createTweetElement = function (tweet) {
   let $tweet = $(
     `<article class='tweet'>
@@ -36,7 +33,7 @@ const createTweetElement = function (tweet) {
 
 $(document).ready(function () {
   // Toggle new tweet section on click
-  $(".compose").on("click", () => {
+  $(".nav-btn").on("click", () => {
     $(".new-tweet").slideToggle("slow", () => {
       $("#tweet-text").focus();
     });
@@ -44,16 +41,17 @@ $(document).ready(function () {
 
   // New tweet submission
   $("form").on("submit", function (event) {
-    $("#errorOne").slideUp("slow", () => {});
-    $("#errorTwo").slideUp("slow", () => {});
+    $("#error-one").slideUp("slow", () => {});
+    $("#error-two").slideUp("slow", () => {});
+    $("#tweet-text").focus();
 
     if (!$("textarea").val().length) {
-      $("#errorOne").slideDown("slow", () => {});
+      $("#error-one").slideDown("slow", () => {});
       return event.preventDefault();
     }
 
     if ($("textarea").val().length > 140) {
-      $("#errorTwo").slideDown("slow", () => {});
+      $("#error-two").slideDown("slow", () => {});
       return event.preventDefault();
     }
 
@@ -76,6 +74,21 @@ $(document).ready(function () {
       renderTweets(data);
     });
   }
+
+  // Scroll btn functionality
+  $("#scroll-btn").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    return false;
+  });
+
+  // Scroll btn visibility
+  $(window).scroll(function () {
+    if ($(this).scrollTop()) {
+      $("#scroll-btn").fadeIn();
+    } else {
+      $("#scroll-btn").fadeOut();
+    }
+  });
 
   loadTweets();
 });
