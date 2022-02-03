@@ -22,9 +22,9 @@ const createTweetElement = function (tweet) {
     `<article class='tweet'>
       <header> <div> <img src="${tweet.user.avatars}"/>${
       tweet.user.name
-    }</div><span> ${tweet.user.handle}</span></header> ${escape(
-      tweet.content.text
-    )}<footer>${timeago.format(tweet.created_at)}<span>
+    }</div><span> ${tweet.user.handle}</span></header>
+    <body> ${escape(tweet.content.text)} </body>
+    <footer>${timeago.format(tweet.created_at)}<span>
           <i class="fas fa-flag"></i>
           <i class="fas fa-retweet"></i>
           <i class="fas fa-heart"></i>
@@ -35,6 +35,14 @@ const createTweetElement = function (tweet) {
 };
 
 $(document).ready(function () {
+  // Toggle new tweet section on click
+  $(".compose").on("click", () => {
+    $(".new-tweet").slideToggle("slow", () => {
+      $("#tweet-text").focus();
+    });
+  });
+
+  // New tweet submission
   $("form").on("submit", function (event) {
     $("#errorOne").slideUp("slow", () => {});
     $("#errorTwo").slideUp("slow", () => {});
@@ -50,15 +58,16 @@ $(document).ready(function () {
     }
 
     event.preventDefault();
-    $("container").empty();
 
     $.ajax({
       url: "/tweets",
       method: "POST",
       data: $(this).serialize(),
     }).then(() => {
+      $(".tweets-container").empty();
       loadTweets();
       $("textarea").val("");
+      $(".counter").html("140");
     });
   });
 

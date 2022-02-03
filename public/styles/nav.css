@@ -15,20 +15,49 @@ nav {
 
 nav span {
   font-family: "Bungee", sans-serif;
+  font-size: 40px;
 }
 
-nav div {
+nav button {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
 }
 
-nav div p {
+nav button:hover {
+  padding-bottom: 5px;
+  font-weight: 400;
+}
+
+nav button p {
   margin: 0;
 }
 
 nav .fas {
   color: red;
+  height: 30px;
+
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform-origin: top;
+  animation-name: bounce;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @media (min-width: 1024px) {
