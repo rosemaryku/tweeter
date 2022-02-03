@@ -1,5 +1,5 @@
 // Escape function to limit XSS
-const escape = function (str) {
+const esc = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -20,7 +20,7 @@ const createTweetElement = function (tweet) {
       <header> <div> <img src="${tweet.user.avatars}"/>${
       tweet.user.name
     }</div><span> ${tweet.user.handle}</span></header>
-    <body> ${escape(tweet.content.text)} </body>
+    <body> ${esc(tweet.content.text)} </body>
     <footer>${timeago.format(tweet.created_at)}<span>
           <i class="fas fa-flag"></i>
           <i class="fas fa-retweet"></i>
