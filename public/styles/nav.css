@@ -1,7 +1,8 @@
 nav {
   height: 120px;
   width: 100%;
-  background-color: #4056a1;
+  background-color: #ffc55c;
+  background-image: url("https://www.transparenttextures.com/patterns/wild-flowers.png");
   color: #ffffff;
   padding: 0 1.5em;
   display: flex;
@@ -28,4 +29,11 @@ nav div p {
 
 nav .fas {
   color: red;
+}
+
+@media (min-width: 1024px) {
+  nav {
+    background-color: #4056a1;
+    background-image: none;
+  }
 }

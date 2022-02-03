@@ -47,6 +47,8 @@
       type="text/javascript"
       src="/scripts/composer-char-counter.js"
     ></script>
+
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
 
   <body>
@@ -59,40 +61,45 @@
       </div>
     </nav>
 
-    <header class="profile">
-      <div>
-        <img src="/images/profile-hex.png" />
-      </div>
-      <br />
-      <div>
-        <h2>Amy Mansell</h2>
-      </div>
-    </header>
+    <div class="content">
+      <header class="profile">
+        <div>
+          <img src="/images/profile-hex.png" />
+        </div>
+        <br />
+        <div>
+          <h2>Amy Mansell</h2>
+        </div>
+      </header>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+      <!-- Page-specific (main) content here -->
+
+      <main class="container">
+        <section class="new-tweet">
+          <!-- <h2>Compose Tweet</h2> -->
+          <form action="/tweets" method="POST">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div>
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text"
+                >140</output
+              >
+            </div>
+          </form>
+
+          <div id="errorOne">
+            Yikes, your tweet has no content. Please tweet away.
+            <i class="fas fa-exclamation-circle"></i>
           </div>
-        </form>
 
-        <div id="errorOne">
-          Yikes, your tweet has no content. Please tweet away.
-          <i class="fas fa-exclamation-circle"></i>
-        </div>
-
-        <div id="errorTwo">
-          Yikes, your tweet is too long. Please limit to 140 characters
-          <i class="fas fa-exclamation-circle"></i>
-        </div>
-      </section>
-      <section class="tweets-container"></section>
-    </main>
+          <div id="errorTwo">
+            Yikes, your tweet is too long. Please limit to 140 characters
+            <i class="fas fa-exclamation-circle"></i>
+          </div>
+        </section>
+        <section class="tweets-container"></section>
+      </main>
+    </div>
   </body>
 </html>
