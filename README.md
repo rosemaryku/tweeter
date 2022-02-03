@@ -7,10 +7,10 @@ This repository is the starter code for the project: Students will fork and clon
 ## Final Product
 
 Tweeter Desktop View
-!["Tweeter Desktop View"](https://github.com/rosemaryku/tweeter/blob/master/docs/tweeter-desktop-view.png)
+!["Tweeter Desktop View"](https://github.com/rosemaryku/tweeter/blob/master/docs/desktop-view.png)
 
 Tweeter Mobile View
-!["Tweeter Desktop View"](https://github.com/rosemaryku/tweeter/blob/master/docs/tweeter-mobile-view.png)
+!["Tweeter Desktop View"](https://github.com/rosemaryku/tweeter/blob/master/docs/mobile-view.png)
 
 ## Getting Started
 
