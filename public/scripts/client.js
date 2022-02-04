@@ -1,25 +1,26 @@
-// Escape function to limit XSS
-const esc = function (str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
+$(document).ready(function () {
+  // Escape function to limit XSS
+  const esc = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
-// Render all tweets
-const renderTweets = function (data) {
-  $.each(data, function (tweet) {
-    let indPost = createTweetElement(data[tweet]);
-    $(".tweets-container").prepend(indPost);
-  });
-};
+  // Render all tweets
+  const renderTweets = function (data) {
+    $.each(data, function (tweet) {
+      let indPost = createTweetElement(data[tweet]);
+      $(".tweets-container").prepend(indPost);
+    });
+  };
 
-// Render ind tweet
-const createTweetElement = function (tweet) {
-  let $tweet = $(
-    `<article class='tweet'>
+  // Render ind tweet
+  const createTweetElement = function (tweet) {
+    let $tweet = $(
+      `<article class='tweet'>
       <header> <div> <img src="${tweet.user.avatars}"/>${
-      tweet.user.name
-    }</div><span> ${tweet.user.handle}</span></header>
+        tweet.user.name
+      }</div><span> ${tweet.user.handle}</span></header>
     <body> ${esc(tweet.content.text)} </body>
     <footer>${timeago.format(tweet.created_at)}<span>
           <i class="fas fa-flag"></i>
@@ -27,31 +28,30 @@ const createTweetElement = function (tweet) {
           <i class="fas fa-heart"></i>
         </span>
       </footer></article>`
-  );
-  return $tweet;
-};
+    );
+    return $tweet;
+  };
 
-$(document).ready(function () {
   // Toggle new tweet section on click
   $(".nav-btn").on("click", () => {
     $(".new-tweet").slideToggle("slow", () => {
-      $("#tweet-text").focus();
+      $(".tweet-text").focus();
     });
   });
 
   // New tweet submission
   $("form").on("submit", function (event) {
-    $("#error-one").slideUp("slow", () => {});
-    $("#error-two").slideUp("slow", () => {});
-    $("#tweet-text").focus();
+    $(".error-one").slideUp("slow", () => {});
+    $(".error-two").slideUp("slow", () => {});
+    $(".tweet-text").focus();
 
     if (!$("textarea").val().length) {
-      $("#error-one").slideDown("slow", () => {});
+      $(".error-one").slideDown("slow", () => {});
       return event.preventDefault();
     }
 
     if ($("textarea").val().length > 140) {
-      $("#error-two").slideDown("slow", () => {});
+      $(".error-two").slideDown("slow", () => {});
       return event.preventDefault();
     }
 

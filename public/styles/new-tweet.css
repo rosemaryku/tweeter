@@ -40,8 +40,8 @@
   color: red;
 }
 
-#error-one,
-#error-two {
+.error-one,
+.error-two {
   background-color: bisque;
   border: 3px solid bisque;
   padding: 3px;

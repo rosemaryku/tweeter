@@ -51,7 +51,6 @@
     ></script>
 
     <!-- Disable Viewport Zooming -->
-
     <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
 
@@ -81,7 +80,7 @@
         <section class="new-tweet">
           <form action="/tweets" method="POST">
             <label for="tweet-text">What are you humming about?</label>
-            <textarea name="text" id="tweet-text" autofocus></textarea>
+            <textarea name="text" class="tweet-text" autofocus></textarea>
             <footer>
               <button type="submit">Tweet</button>
               <output name="counter" class="counter" for="tweet-text"
@@ -91,12 +90,12 @@
           </form>
 
           <!-- Data Validation Prompts -->
-          <div id="error-one">
+          <div class="error-one">
             Yikes, your tweet has no content. Please tweet away.
             <i class="fas fa-exclamation-circle"></i>
           </div>
 
-          <div id="error-two">
+          <div class="error-two">
             Yikes, your tweet is too long. Please limit to 140 characters
             <i class="fas fa-exclamation-circle"></i>
           </div>
